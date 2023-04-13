@@ -30,6 +30,7 @@ start_time = start.strftime('%H:%M:%S')
 
 # pętla po wszystkich wierszach z arkusza
 for _, row in df_challenge[0:10].iterrows():
+    # pętla po wszystkich nagłowkach z arkuasza
     for i, _ in enumerate(field_names_to_fill, 1):
         lbl = f'/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/div/div[{i}]/rpa1-field/div/label'
         inp = f'/html/body/app-root/div[2]/app-rpa1/div/div[2]/form/div/div[{i}]/rpa1-field/div/input'
@@ -45,9 +46,11 @@ for _, row in df_challenge[0:10].iterrows():
     )
     bttnSubmit.click()
 
+# godzina zakończenia zadania
 stop = datetime.now()
-stop_time = stop.strftime("%H:%M:%S")
+stop_time = stop.strftime('%H:%M:%S')
+
+# zwrócenie czasu pracy robota
 print('Robot pracował:', 'od', start_time, 'do', stop_time)
 time_delta = stop - start
 print('Robot wykonał pracę w:', time_delta, 'sekund')
-
