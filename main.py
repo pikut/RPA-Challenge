@@ -17,7 +17,11 @@ field_names_to_fill = [
 ]
 
 # otwarcie przeglądarki na stronie wyzwania
-browser = webdriver.Chrome()
+chrome_options = webdriver.ChromeOptions()
+browser = webdriver.Remote(
+  command_executor='http://172.18.0.2:4444',
+  options=chrome_options
+)
 browser.get('https://www.rpachallenge.com/')
 
 # znalezienie przycisku rozpoczęcia wyzwania oraz jego kliknięcie
