@@ -19,7 +19,7 @@ field_names_to_fill = [
 # otwarcie przeglądarki na stronie wyzwania
 chrome_options = webdriver.ChromeOptions()
 browser = webdriver.Remote(
-  command_executor='http://172.18.0.2:4444',
+  command_executor='http://chrome:4444/wd/hub',
   options=chrome_options
 )
 browser.get('https://www.rpachallenge.com/')
