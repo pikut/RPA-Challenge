@@ -7,7 +7,9 @@ services:
             - "5900:5900"
 
     rpa-challenge:
-        image: pikut/rpa-challenge:v2
+        image: pikut/rpa-challenge:latest
         depends_on:
             - chrome
         restart: on-failure
+        environment:
+            - DOCKER_CONTAINER="true"
