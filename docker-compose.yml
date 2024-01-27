@@ -7,6 +7,7 @@ services:
             - "5900:5900"
 
     rpa-challenge:
-        build: .
+        image: pikut/rpa-challenge:v2
         depends_on:
             - chrome
+        restart: on-failure
